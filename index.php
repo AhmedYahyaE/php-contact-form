@@ -2,6 +2,10 @@
 
     // Checking if the user is coming through a POST request and not by using a URL copy/paste (a GET request)
     if ($_SERVER['REQUEST_METHOD'] == "POST") {
+        // echo "Submitted";
+        echo '<div class="alert alert-danger" role="alert">Please note that email() PHP function doesn\'t work on localhosts!</div>';
+
+
         // Assigning variables
         // $userName  = filter_var($_POST['username'], FILTER_SANITIZE_STRING); // Deprecated
         $userName  = htmlspecialchars($_POST['username']);
@@ -12,7 +16,8 @@
         // $message   = filter_var($_POST['message'], FILTER_SANITIZE_STRING); // Deprecated
         $message   = htmlspecialchars($_POST['message']);
 
-        echo "Submitted";
+
+
         /*
         // 2nd method for showing errors
         $usernameError = ""; // Just defining the variable
